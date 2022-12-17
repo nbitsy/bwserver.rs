@@ -6,11 +6,9 @@ pub mod service;
 pub mod tool;
 pub mod util;
 
-use log;
-
 #[cfg(test)]
 mod tests {
-    use crate::util;
+    use crate::{tool};
 
     #[test]
     fn it_works() {
@@ -18,7 +16,7 @@ mod tests {
         assert_eq!(result, 4);
 
         let logfile = "config/log4rs.yaml";
-        if let Some(_r) = util::l4rs::init_file(logfile) {
+        if let Some(_r) = tool::l4rs::init_file(logfile) {
         } else {
             panic!("Init log file {:?} error.", logfile);
         }
